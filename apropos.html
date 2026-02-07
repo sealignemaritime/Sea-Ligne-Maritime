@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>À propos - Sea Ligne Maritime</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page À propos */
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .hero-image {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-image img {
+            max-width: 900px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .mission-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 87, 51, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--orange-mada);
+            margin-bottom: 10px;
+        }
+        
+        .team-section {
+            margin-top: 60px;
+        }
+        
+        .contact-promo {
+            background: linear-gradient(135deg, rgba(255,87,51,0.1), rgba(0,43,92,0.2));
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+            border: 1px solid rgba(255, 87, 51, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="IMG_20260126_201622_551jpg.jpg" alt="Sea Ligne Maritime - France Madagascar" style="height: 40px; max-width: 300px;">
+            <strong>SEA LIGNE MARITIME</strong>
+        </div>    
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="calculateur.html">Calculateur</a>
+            <a href="contact.html">Contact</a>
+            <a href="apropos.html" class="btn-cta">À propos</a>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="glass-card">
+            <!-- Bannière -->
+            <div class="hero-image">
+                <img src="IMG_2026126_201612_816.png" alt="Sea Ligne Maritime - Votre lien de confiance">
+            </div>
+            
+            <!-- Titre et introduction -->
+            <h1 style="text-align: center; margin-bottom: 30px; color: var(--orange-mada);">
+                À propos de nous
+            </h1>
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                    <em>"Votre lien de confiance pour l'envoi de colis"</em> n'est pas seulement notre slogan, 
+                    c'est notre engagement quotidien envers chaque client.
+                </p>
+            </div>
+            
+            <!-- Notre histoire -->
+            <div style="margin-bottom: 50px;">
+                <h2 style="color: var(--text-light); margin-bottom: 20px;">📖 Notre Histoire</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                    Fondée avec une vision claire : <strong>rendre accessible et sécurisé le transport maritime 
+                    entre la France et Madagascar</strong>, Sea Ligne Maritime est née de l'expérience de 
+                    professionnels du secteur maritime.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Face à la complexité et au manque de transparence dans le transport de colis, 
+                    nous avons décidé de créer une solution simple, fiable et économique. 
+                    Aujourd'hui, nous sommes fiers d'offrir un service hebdomadaire qui relie 
+                    la France à Antsiranana (Diego), avec un suivi personnalisé pour chaque envoi.
+                </p>
+            </div>
+            
+            <!-- Statistiques/Points forts -->
+            <div class="mission-stats">
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <h3>Sécurité</h3>
+                    <p>Vos colis sont assurés et suivis à chaque étape du transport</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">52+</div>
+                    <h3>Départs annuels</h3>
+                    <p>Un départ chaque semaine pour Antsiranana</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">0,1 m³</div>
+                    <h3>Volume minimum</h3>
+                    <p>Groupage accessible dès le premier carton</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <h3>Flexibilité</h3>
+                    <p>Enlèvement partout en France ou dépôt gratuit</p>
+                </div>
+            </div>
+            
+            <!-- Nos valeurs -->
+            <div style="margin: 60px 0;">
+                <h2 style="color: var(--text-light); margin-bottom: 30px; text-align: center;">⚓ Nos Valeurs</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                    <div class="glass-card" style="background: rgba(255,87,51,0.08);">
+                        <h3 style="color: var(--orange-mada);">🤝 Transparence</h3>
+                        <p>Pas de frais cachés. Des tarifs clairs et compétitifs, visibles sur notre grille tarifaire.</p>
+                    </div>
+                    
+                    <div class="glass-card" style="background: rgba(0,43,92,0.15);">
+                        <h3 style="color: var(--text-light);">⚡ Fiabilité</h3>
+                        <p>Départs hebdomadaires garantis. Suivi en temps réel de vos marchandises.</p>
+                    </div>
+                    
+                    <div class="glass-card" style="background: rgba(255,255,255,0.05);">
+                        <h3 style="color: var(--text-light);">💬 Service client</h3>
+                        <p>Une équipe dédiée vous accompagne de l'enlèvement à la livraison.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notre équipe -->
+            <div class="team-section">
+                <h2 style="color: var(--text-light); margin-bottom: 30px; text-align: center;">👥 Notre Équipe</h2>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+                    <div style="text-align: center; max-width: 250px;">
+                        <div style="width: 120px; height: 120px; background: rgba(255,87,51,0.2); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                            ⚓
+                        </div>
+                        <h3 style="color: var(--orange-mada);">Experts Maritimes</h3>
+                        <p style="color: var(--text-muted);">Spécialistes du transport France-Madagascar</p>
+                    </div>
+                    
+                    <div style="text-align: center; max-width: 250px;">
+                        <div style="width: 120px; height: 120px; background: rgba(0,43,92,0.3); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                            📦
+                        </div>
+                        <h3 style="color: var(--text-light);">Logisticiens</h3>
+                        <p style="color: var(--text-muted);">Gestion optimisée de vos envois</p>
+                    </div>
+                    
+                    <div style="text-align: center; max-width: 250px;">
+                        <div style="width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                            📞
+                        </div>
+                        <h3 style="color: var(--text-light);">Support client</h3>
+                        <p style="color: var(--text-muted);">À votre écoute pour chaque besoin</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Contact -->
+            <div class="contact-promo">
+                <h2 style="color: var(--orange-mada); margin-bottom: 20px;">Prêt à envoyer vos colis ?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Rejoignez nos nombreux clients satisfaits qui nous font confiance 
+                    pour leurs envois entre la France et Madagascar.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn" style="padding: 15px 40px;">Nous contacter</a>
+                    <a href="calculateur.html" class="btn" style="background: transparent; border: 2px solid var(--orange-mada); padding: 15px 40px;">
+                        Calculer mon prix
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="IMG_20260126_201622_551jpg.jpg" alt="Logo Sea Ligne Maritime" 
+                     style="height: 40px; margin-bottom: 15px;">
+                <p style="color: var(--orange-mada); font-weight: 600;">
+                    FRANCE - MADAGASCAR
+                </p>
+            </div>
+            
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    © <script>document.write(new Date().getFullYear())</script> Sea Ligne Maritime<br>
+                    32 rue de la pastière, France | sealignemaritime@gmail.com<br>
+                    Arrivée : Antsiranana (Diego) | Fréquence : Chaque semaine
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Sea Ligne Maritime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    <nav>
+        <div class="logo">
+            <img src="IMG_20260126_201622_551jpg.jpg" alt="Sea Ligne Maritime - France Madagascar" style="height: 40px; max-width: 300px;">
+            <strong>SEA LIGNE MARITIME</strong>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="calculateur.html">Calculateur</a>
+            <a href="contact.html">Contact</a>
+            <a href="apropos.html" class="btn-cta">À propos</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="glass-card" style="max-width: 600px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+                <div>
+                    <h2 style="text-align: center; margin-top: 0; margin-bottom: 30px;">Contactez-nous</h2>
+                    
+                    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                        <p style="margin: 0 0 10px 0;">📍 <strong>Siège :</strong> 32 rue de la pastière, France</p>
+                        <p style="margin: 0 0 10px 0;">📧 <strong>Email :</strong> sealignemaritime@gmail.com</p>
+                        <p style="margin: 0 0 10px 0;">⚓ <strong>Arrivée :</strong> Antsiranana (Diego)</p>
+                        <p style="margin: 0;">🚢 <strong>Fréquence :</strong> Chaque semaine</p>
+                    </div>
+                    
+                    <div>
+                        <h3 style="margin-top:0; text-align: center;">Envoyez-nous un message</h3>
+                        
+                        <!-- Formulaire simplifié -->
+                        <form id="contact-form" style="margin-top: 20px;">
+                            <!-- Nom -->
+                            <input type="text" 
+                                   name="nom" 
+                                   id="nom" 
+                                   placeholder="Votre nom *" 
+                                   required 
+                                   style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px; color: white; width: 100%; border-radius: 5px; margin-bottom: 15px;">
+                            
+                            <!-- Email -->
+                            <input type="email" 
+                                   name="email" 
+                                   id="email" 
+                                   placeholder="Votre email *" 
+                                   required 
+                                   style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px; color: white; width: 100%; border-radius: 5px; margin-bottom: 15px;">
+                            
+                            <!-- Message -->
+                            <textarea name="message" 
+                                      id="message" 
+                                      placeholder="Votre message *" 
+                                      required 
+                                      rows="6"
+                                      style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px; color: white; width: 100%; border-radius: 5px; margin-bottom: 10px; resize: vertical;"></textarea>
+                            
+                            <!-- Note et bouton -->
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-bottom: 20px;">* Champs obligatoires</p>
+                            
+                            <!-- Messages de confirmation/erreur -->
+                            <div id="success-message" style="display: none; background: rgba(46, 204, 113, 0.2); color: #2ecc71; padding: 12px; border-radius: 5px; margin-bottom: 15px; text-align: center;">
+                                ✅ Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.
+                            </div>
+                            
+                            <div id="error-message" style="display: none; background: rgba(231, 76, 60, 0.2); color: #e74c3c; padding: 12px; border-radius: 5px; margin-bottom: 15px; text-align: center;">
+                                ❌ Une erreur s'est produite. Veuillez réessayer ou nous contacter directement par email.
+                            </div>
+                            
+                            <button type="submit" 
+                                    id="submit-btn" 
+                                    style="background:var(--orange-mada); color:white; border:none; padding:15px; width:100%; border-radius:5px; cursor:pointer; font-weight:bold; font-size: 1rem;">
+                                ENVOYER LE MESSAGE
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="IMG_20260126_201622_551jpg.jpg" alt="Logo Sea Ligne Maritime" 
+                     style="height: 40px; margin-bottom: 15px;">
+                <p style="color: var(--orange-mada); font-weight: 600;">
+                    FRANCE - MADAGASCAR
+                </p>
+            </div>
+            
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    © <script>document.write(new Date().getFullYear())</script> Sea Ligne Maritime<br>
+                    32 rue de la pastière, France | sealignemaritime@gmail.com<br>
+                    Arrivée : Antsiranana (Diego) | Fréquence : Chaque semaine
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script type="text/javascript">
+        // Initialisation d'EmailJS avec votre Public Key
+        emailjs.init("lO7INh5Vdo7jHYkrg"); // À remplacer avec votre clé publique
+        
+        // Gestion du formulaire
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Désactiver le bouton pendant l'envoi
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Envoi en cours...';
+                
+                // Cacher les messages précédents
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                
+                // Récupérer les valeurs
+                const nom = document.getElementById('nom').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Préparer les paramètres pour EmailJS
+                const templateParams = {
+                    from_name: nom,
+                    from_email: email,
+                    to_email: "sealignemaritime@gmail.com", // Votre email
+                    message: message,
+                    date: new Date().toLocaleDateString('fr-FR'),
+                    time: new Date().toLocaleTimeString('fr-FR')
+                };
+                
+                // Envoyer le formulaire via EmailJS
+                // REMPLACEZ 'VOTRE_SERVICE_ID' et 'VOTRE_TEMPLATE_ID' par vos identifiants
+                emailjs.send('service_gv9kd53', 'template_osgw8vi', templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        
+                        // Afficher le message de succès
+                        successMessage.style.display = 'block';
+                        
+                        // Réinitialiser le formulaire
+                        contactForm.reset();
+                        
+                        // Réactiver le bouton
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'ENVOYER LE MESSAGE';
+                        
+                        // Faire défiler vers le haut du formulaire
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Cacher le message après 10 secondes
+                        setTimeout(function() {
+                            successMessage.style.display = 'none';
+                        }, 10000);
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        
+                        // Afficher le message d'erreur
+                        errorMessage.style.display = 'block';
+                        
+                        // Réactiver le bouton
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'ENVOYER LE MESSAGE';
+                        
+                        // Faire défiler vers le message d'erreur
+                        errorMessage.scrollIntoView({ behavior: 'smooth' });
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

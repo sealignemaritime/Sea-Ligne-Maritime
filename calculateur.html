@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculateur - Sea Ligne Maritime</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        input { 
+            background: rgba(255,255,255,0.1); 
+            border: 1px solid rgba(255,255,255,0.2); 
+            padding: 15px; 
+            color: white; 
+            width: 100%; 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+            box-sizing: border-box; 
+            font-size: 1rem;
+        }
+        input:focus { 
+            outline: none; 
+            border-color: var(--orange-mada); 
+        }
+        input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    <nav>
+        <div class="logo">
+            <img src="IMG_20260126_201622_551jpg.jpg" alt="Sea Ligne Maritime - France Madagascar" style="height: 40px; max-width: 300px;">
+            <strong>SEA LIGNE MARITIME</strong>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="calculateur.html">Calculateur</a>
+            <a href="contact.html">Contact</a>
+            <a href="apropos.html" class="btn-cta">À propos</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="glass-card" style="max-width: 500px; margin: 0 auto;">
+            <h2 style="margin-top:0; text-align: center;">Simulateur de Prix</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.8); margin-bottom: 25px;">
+                France → Madagascar • Estimation précise avec tranches fines
+            </p>
+            
+            <input type="number" id="L" placeholder="Longueur (cm)" min="1" step="1">
+            <input type="number" id="l" placeholder="Largeur (cm)" min="1" step="1">
+            <input type="number" id="h" placeholder="Hauteur (cm)" min="1" step="1">
+            
+            <button onclick="calculer()" style="width:100%; padding:15px; background:var(--orange-mada); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; font-size:1.1rem; margin-top: 10px;">
+                ESTIMER LE PRIX
+            </button>
+            
+            <div id="res" style="margin-top:30px; padding:20px; border-radius:10px; background: rgba(0,0,0,0.2); text-align:center; display: none;"></div>
+        </div>
+    </section>
+
+    <script>
+        function calculer() {
+            // Récupérer les valeurs
+            const L = parseFloat(document.getElementById('L').value);
+            const l = parseFloat(document.getElementById('l').value);
+            const h = parseFloat(document.getElementById('h').value);
+            
+            // Vérifier si tous les champs sont remplis
+            if (!L || !l || !h || L <= 0 || l <= 0 || h <= 0) {
+                alert("Veuillez remplir toutes les dimensions avec des valeurs positives");
+                return;
+            }
+            
+            // Calculer le volume en m³
+            const v = (L * l * h) / 1000000; // Conversion cm³ → m³
+            const resDiv = document.getElementById('res');
+            
+            let p = 0;
+            let tranche = "";
+            
+            // NOUVELLE GRILLE AVEC TRANCHES FINES
+            if (v <= 0.1) {
+                p = 50;
+                tranche = "0 - 0,1 m³";
+            } 
+            else if (v <= 0.2) {
+                p = 100;
+                tranche = "0,1 - 0,2 m³";
+            }
+            else if (v <= 0.3) {
+                p = 130;
+                tranche = "0,2 - 0,3 m³";
+            }
+            else if (v <= 0.4) {
+                p = 160;
+                tranche = "0,3 - 0,4 m³";
+            }
+            else if (v <= 0.5) {
+                p = 195;
+                tranche = "0,4 - 0,5 m³";
+            }
+            else if (v <= 0.75) {
+                p = 290;
+                tranche = "0,5 - 0,75 m³";
+            }
+            else if (v <= 1) {
+                p = 390;
+                tranche = "0,75 - 1 m³";
+            }
+            else if (v <= 1.5) {
+                p = 585;
+                tranche = "1 - 1,5 m³";
+            }
+            else if (v <= 2) {
+                p = 780;
+                tranche = "1,5 - 2 m³";
+            }
+            else if (v <= 3) {
+                p = 1170;
+                tranche = "2 - 3 m³";
+            }
+            else if (v <= 4) {
+                p = 1560;
+                tranche = "3 - 4 m³";
+            }
+            else if (v <= 5) {
+                p = 1950;
+                tranche = "4 - 5 m³";
+            }
+            else if (v <= 7.5) {
+                p = 2925;
+                tranche = "5 - 7,5 m³";
+            }
+            else if (v <= 10) {
+                p = 3900;
+                tranche = "7,5 - 10 m³";
+            }
+            else {
+                // Plus de 10 m³
+                resDiv.innerHTML = `
+                    <div style="color: #ffa726; margin-bottom: 10px;">
+                        📦 Volume calculé : <strong>${v.toFixed(3)} m³</strong>
+                    </div>
+                    <div style="background: rgba(255,167,38,0.1); padding: 15px; border-radius: 5px; margin-top: 10px;">
+                        <strong style="color: var(--orange-mada);">DEVIS PERSONNALISÉ REQUIS</strong><br>
+                        <span style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                            Pour les volumes supérieurs à 10 m³
+                        </span>
+                        <a href="contact.html" style="display: inline-block; margin-top: 10px; background: var(--orange-mada); color: white; padding: 8px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                            Demander un devis
+                        </a>
+                    </div>
+                `;
+                resDiv.style.display = 'block';
+                return;
+            }
+            
+            // Afficher le résultat
+            resDiv.innerHTML = `
+                <div style="margin-bottom: 15px;">
+                    <div style="color: var(--orange-mada); font-size: 1.1rem; margin-bottom: 5px;">
+                        📦 Volume : <strong>${v.toFixed(3)} m³</strong>
+                    </div>
+                </div>
+                <div style="background: rgba(255,167,38,0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,167,38,0.3);">
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: 5px;">
+                        Estimation prix
+                    </div>
+                    <div style="font-size: 2rem; color: var(--orange-mada); font-weight: bold;">
+                        ${p.toLocaleString('fr-FR')} €
+                    </div>
+                </div>
+                <div style="margin-top: 15px; font-size: 0.8rem; color: rgba(255,255,255,0.6);">
+                    * Prix indicatif basé sur le volume uniquement
+                </div>
+            `;
+            
+            resDiv.style.display = 'block';
+            
+            // Faire défiler vers le résultat
+            resDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Permettre d'utiliser la touche Entrée
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    calculer();
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="IMG_20260126_201622_551jpg.jpg" alt="Logo Sea Ligne Maritime" 
+                     style="height: 40px; margin-bottom: 15px;">
+                <p style="color: var(--orange-mada); font-weight: 600;">
+                    FRANCE - MADAGASCAR
+                </p>
+            </div>
+            
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    © <script>document.write(new Date().getFullYear())</script> Sea Ligne Maritime<br>
+                    32 rue de la pastière, France | sealignemaritime@gmail.com<br>
+                    Arrivée : Antsiranana (Diego) | Fréquence : Chaque semaine
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
